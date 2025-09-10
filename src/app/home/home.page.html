@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- A barra de título padrão foi removida. Adicionamos [fullscreen]="true" para o conteúdo ocupar toda a tela -->
+<ion-content class="ion-padding" [fullscreen]="true">
+  
+  <div class="game-title-container">
+    <h1 class="game-title">Jogo da Memória</h1>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Novo container para as estatísticas -->
+  <div class="stats-container">
+    <div class="stat-box">
+      <span>Pares</span>
+      <p>{{ matchesFound }} / {{ totalMatches }}</p>
+    </div>
+    <div class="stat-box">
+      <span>Tentativas</span>
+      <p>{{ attempts }}</p>
+    </div>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- O tabuleiro do jogo -->
+  <div class="game-board">
+    <div 
+      *ngFor="let card of cards" 
+      class="card"
+      [class.flipped]="card.isFlipped"
+      [class.matched]="card.isMatched"
+      (click)="flipCard(card)">
+      
+      <!-- Lado de trás da carta -->
+      <div class="card-face card-back"></div>
+      
+      <!-- Lado da frente da carta (com o emoji) -->
+      <div class="card-face card-front">
+        {{ card.emoji }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão de reiniciar estilizado -->
+  <div class="reset-button-container">
+    <ion-button (click)="resetGame()" expand="block" shape="round" color="light">
+      <ion-icon slot="start" name="refresh-outline"></ion-icon>
+      Reiniciar Jogo
+    </ion-button>
   </div>
 </ion-content>
+
