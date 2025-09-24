@@ -18,7 +18,7 @@ Certifique-se de ter Node.js (v16+), Ionic CLI (npm install -g @ionic/cli) e Git
 Clone o repositório e instale as dependências com os seguintes comandos:
 
 # Clone o projeto
-git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+git clone [[https://github.com/seu-usuario/seu-repositorio.git](https://github.com/VictorLBSouza/jogo-da-memoria.git)]([https://github.com/seu-usuario/seu-repositorio.git](https://github.com/VictorLBSouza/jogo-da-memoria.git))
 
 # Navegue até o diretório
 cd seu-repositorio
